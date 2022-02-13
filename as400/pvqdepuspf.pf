@@ -1,0 +1,9 @@
+ *
+     A          R RPVQDEPUS
+     A                                      TEXT('Data queue exclusion')
+     A            DTQNAM        10          COLHDG('Data queue name')
+     A            DTQLIB        10          COLHDG('Data queue library')
+     A            DTQDES        40          COLHDG('Description    ')
+     A
+     A          K DTQNAM
+ *

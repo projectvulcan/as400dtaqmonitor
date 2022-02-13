@@ -1,0 +1,207 @@
+     A*%%TS  SD  20220127  185738  SYAZWANH    REL-V7R4M0  5770-WDS
+     A*=========================================================================
+     A*                                                        SyazwanH/030718 *
+     A* PVQDEPUSD                                                              *
+     A* Monitor queue depth.                                                   *
+     A*                                                                        *
+     A* Version 1 Release 2 Modification 3                                     *
+     A*                                                                        *
+     A*  For use with PVQDEPUS *RPGLE.                                         *
+     A*                                                                        *
+     A*=========================================================================
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R D01
+     A*%%TS  SD  20220127  185738  SYAZWANH    REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                  2 72TIME
+     A                                  1  2USER
+     A                                  2  2SYSNAME
+     A                                  3  2'                                  -
+     A                                                                         -
+     A                                               '
+     A                                      DSPATR(UL)
+     A                                  1 28'Data Queue Monitoring Tool'
+     A                                      DSPATR(HI)
+     A                                  2 34'Project Vulcan'
+     A                                      DSPATR(HI)
+     A          R SFL                       SFL
+     A*%%TS  SD  20030719  102624  SYAZWANH    REL-V5R1M0  5722-WDS
+     A            WDQLIB        10   O  7  3
+     A  60                                  COLOR(RED)
+     A  57                                  DSPATR(ND)
+     A            WDQNAM        10   O  7 14
+     A  60                                  COLOR(RED)
+     A  57                                  DSPATR(ND)
+     A            WPERC          6   O  7 26
+     A  60                                  COLOR(RED)
+     A  57                                  DSPATR(ND)
+     A            WMSGAVL        7  0O  7 34EDTCDE(3)
+     A  60                                  COLOR(RED)
+     A  57                                  DSPATR(ND)
+     A            WMSGINT        7  0O  7 44EDTCDE(4)
+     A  60                                  COLOR(RED)
+     A  57                                  DSPATR(ND)
+     A            WMSGALC        7  0O  7 54EDTCDE(4)
+     A  60                                  COLOR(RED)
+     A  57                                  DSPATR(ND)
+     A            WMSGMAX        7  0O  7 64EDTCDE(4)
+     A  60                                  COLOR(RED)
+     A  57                                  DSPATR(ND)
+     A            WRMK           5   O  7 73
+     A  60                                  COLOR(RED)
+     A  57                                  DSPATR(ND)
+     A          R SFLC                      SFLCTL(SFL)
+     A*%%TS  SD  20070111  064904  SYAZWANH    REL-V5R3M0  5722-WDS
+     A                                      CA03(03 'Exit Function')
+     A                                      CA05(05 'Refresh')
+     A                                      CA07(07 'Change Parameters')
+     A                                      CA12(12 'Cancel')
+     A                                      PAGEDOWN(71 'Next Record')
+     A                                      PAGEUP(72 'Previous Record')
+     A                                      CF09(09 'Information')
+     A N55                                  INVITE
+     A                                      OVERLAY
+     A                                      SFLCSRRRN(&WACRRN)
+     A N55                                  SFLDSP
+     A N55                                  SFLDSPCTL
+     A  55                                  SFLCLR
+     A                                      SFLSIZ(0014)
+     A                                      SFLPAG(0014)
+     A  81                                  SFLMSG('Roll up or down past the fi-
+     A                                      rst or last record in file.')
+     A            WARRN          4S 0H      SFLRCDNBR
+     A            WACRRN         5S 0H
+     A                                  6  3'Data queue'
+     A                                      DSPATR(HI)
+     A                                  6 33'Available'
+     A                                      DSPATR(HI)
+     A                                  6 53'Allocated'
+     A                                      DSPATR(HI)
+     A                                  6 64'Maximum'
+     A                                      DSPATR(HI)
+     A                                  6 44'Initial'
+     A                                      DSPATR(HI)
+     A                                  5 33'--------- Number of messages ------
+     A                                      ----'
+     A                                      DSPATR(HI)
+     A                                  6 73'Rmk.'
+     A                                      DSPATR(HI)
+     A                                  6 31'%'
+     A                                      DSPATR(HI)
+     A          R D02
+     A*%%TS  SD  20070111  064904  SYAZWANH    REL-V5R3M0  5722-WDS
+     A                                      OVERLAY
+     A                                 22  2'                                  -
+     A                                                                         -
+     A                                               '
+     A                                      DSPATR(UL)
+     A                                 23  3'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 23 12'F5=Refresh'
+     A                                      COLOR(BLU)
+     A                                 23 24'F7=Change Parameters'
+     A                                      COLOR(BLU)
+     A            WSFLIND        7A  O 21 73DSPATR(HI)
+     A                                 23 46'F9=Queue Information'
+     A                                      COLOR(BLU)
+     A          R D03
+     A*%%TS  SD  20030719  093614  SYAZWANH    REL-V5R1M0  5722-WDS
+     A                                      CA03(03 'Exit Function')
+     A                                      CA08(08 'Default Settings')
+     A                                      CA12(12 'Cancel')
+     A                                      OVERLAY
+     A                                  5  3'Parameter Setup'
+     A                                      DSPATR(HI)
+     A                                  7  5'Frequency of checking . . . . .'
+     A                                  9  5'Critical data queue volume  . .'
+     A                                 22  2'                                  -
+     A                                                                         -
+     A                                               '
+     A                                      DSPATR(UL)
+     A                                 23  3'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 23 12'F8=Program default'
+     A                                      COLOR(BLU)
+     A                                 23 32'F12=Cancel'
+     A                                      COLOR(BLU)
+     A            WFEQ           5Y 0B  7 38EDTCDE(4)
+     A                                      RANGE(5 10000)
+     A                                  7 44'seconds. (5 - 10000)'
+     A            WCRC           5Y 0B  9 38EDTCDE(4)
+     A                                      RANGE(50 4000)
+     A                                  9 44'messages. (50 - 4000)'
+     A                                 11  5'Library List . . .'
+     A            WLIB01        10A  B 13  7
+     A  41                                  DSPATR(RI)
+     A  41                                  DSPATR(PC)
+     A            WLIB02        10A  B 14  7
+     A  42                                  DSPATR(RI)
+     A  42                                  DSPATR(PC)
+     A            WLIB03        10A  B 15  7
+     A  43                                  DSPATR(RI)
+     A  43                                  DSPATR(PC)
+     A            WLIB04        10A  B 16  7
+     A  44                                  DSPATR(RI)
+     A  44                                  DSPATR(PC)
+     A            WLIB05        10A  B 13 21
+     A  45                                  DSPATR(RI)
+     A  45                                  DSPATR(PC)
+     A            WLIB06        10A  B 14 21
+     A  46                                  DSPATR(RI)
+     A  46                                  DSPATR(PC)
+     A            WLIB07        10A  B 15 21
+     A  47                                  DSPATR(RI)
+     A  47                                  DSPATR(PC)
+     A            WLIB08        10A  B 16 21
+     A  48                                  DSPATR(RI)
+     A  48                                  DSPATR(PC)
+     A            WLIB09        10A  B 13 35
+     A  49                                  DSPATR(RI)
+     A  49                                  DSPATR(PC)
+     A            WLIB10        10A  B 14 35
+     A  50                                  DSPATR(RI)
+     A  50                                  DSPATR(PC)
+     A            WERRDESC      60A  O 21  5DSPATR(HI)
+     A          R D04
+     A*%%TS  SD  20070111  074124  SYAZWANH    REL-V5R3M0  5722-WDS
+     A                                      CA03(03 'Exit Function')
+     A                                      CA12(12 'Cancel')
+     A                                      OVERLAY
+     A                                  5  3'Data Queue Information'
+     A                                      DSPATR(HI)
+     A                                 22  2'                                  -
+     A                                                                         -
+     A                                               '
+     A                                      DSPATR(UL)
+     A                                 23  3'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 23 12'F12=Cancel'
+     A                                      COLOR(BLU)
+     A            IERRDESC      60A  O 21  5DSPATR(HI)
+     A                                  7  5'Queue path . . .'
+     A            IQUEUEPATH    50A  O  7 23
+     A                                  9  5'Message length . .'
+     A                                 10  5'Key length . . . . .'
+     A                                 11  5'Sequence . . . .'
+     A                                 12  5'Sender ID  . . .'
+     A                                 13  5'Force  . . . . .'
+     A                                 14  5'Type . . . . . .'
+     A                                 15  5'Auto Reclaim . .'
+     A                                 17  5'Available  . . .'
+     A                                 18  5'Initial  . . . .'
+     A                                 17 36'Allocated  . . .'
+     A                                 18 36'Maximum  . . . .'
+     A            IMSGLEN        7Y 0O  9 26EDTCDE(3)
+     A            IKEYLEN        5Y 0O 10 28EDTCDE(3)
+     A            ISEQ          10A  O 11 23
+     A            ISENDERID     10A  O 12 23
+     A            IFORCE        10A  O 13 23
+     A            ITYPE         10A  O 14 23
+     A            IRECLAIM      10A  O 15 23
+     A            IAVAIL         7Y 0O 17 23EDTCDE(3)
+     A            IINITIAL       7Y 0O 18 23EDTCDE(3)
+     A            IALLOCATE      7Y 0O 17 54EDTCDE(3)
+     A            IMAXIMUM       7Y 0O 18 54EDTCDE(3)
