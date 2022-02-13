@@ -20,4 +20,7 @@ Simply, CALL PVQDEPUS.
 
 ![This is an image](screenshot1.png)
 
-If there are data queues in your library list, it will show those data queues, sorted first by which one has the most pending entries. The screen will auto refresh itself every 5 seconds by default.
+If there are data queues in your library list, it will show those data queues, sorted first by which one has the most pending entries. The screen will auto refresh itself every 5 seconds by default. Press F7 to change this default.
+
+![This is an image](screenshot2.png)
+
