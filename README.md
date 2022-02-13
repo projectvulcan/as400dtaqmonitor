@@ -18,6 +18,6 @@ Compile the PF first using option 14. Then DSPF using option 14. Then the RPGLE 
 ## Running the Program
 Simply, CALL PVQDEPUS.
 
-![This is an image](screenshot.png)
+![This is an image](screenshot1.png)
 
 If there are data queues in your library list, it will show those data queues, sorted first by which one has the most pending entries. The screen will auto refresh itself every 5 seconds by default.
