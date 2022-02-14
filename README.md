@@ -24,3 +24,6 @@ If there are data queues in your library list, it will show those data queues, s
 
 ![This is an image](screenshot2.png)
 
+To get more data queue information, point your cursor to the data queue listed on screen and press F9.
+
+![This is an image](screenshot3.png)
